@@ -16,7 +16,7 @@ import { NotificationService } from 'src/app/service/notification.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InvoicesComponent  implements OnInit {
-  invoicesState$: Observable<State<CustomHttpResponse<Page<Invoice> & User>>>;
+  invoicesState$: Observable<State<any>>;
   private dataSubject = new BehaviorSubject<CustomHttpResponse<Page<Invoice> & User>>(null);
   private isLoadingSubject = new BehaviorSubject<boolean>(false);
   isLoading$ = this.isLoadingSubject.asObservable();
