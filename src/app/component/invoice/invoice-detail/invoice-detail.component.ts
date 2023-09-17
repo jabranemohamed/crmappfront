@@ -49,9 +49,10 @@ export class InvoiceDetailComponent implements OnInit {
   }
 
   exportAsPDF(): void {
+    // @ts-ignore
     const filename = `invoice-${this.dataSubject.value.data['invoice'].invoiceNumber}.pdf`;
     const doc = new pdf();
-    doc.html(document.getElementById('invoice'), { margin: 5, windowWidth: 1000, width: 200, 
+    doc.html(document.getElementById('invoice'), { margin: 5, windowWidth: 1000, width: 200,
       callback: (invoice) => invoice.save(filename) });
   }
 
