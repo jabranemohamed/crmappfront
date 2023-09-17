@@ -149,7 +149,7 @@ export class ProfileComponent implements OnInit {
             console.log(response);
             this.dataSubject.next({ ...response,
               data: { ...response.data,
-                user: { ...response.data.user, imageUrl: `${response.data.user.imageUrl}?time=${new Date().getTime()}`}} });
+                user: { ...response.data?.user, imageUrl: `${response.data?.user?.imageUrl}?time=${new Date().getTime()}`}} });
             this.isLoadingSubject.next(false);
             return { dataState: DataState.LOADED, appData: this.dataSubject.value };
           }),
