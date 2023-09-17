@@ -83,6 +83,22 @@ export class UserService {
         catchError(this.handleError)
       );
 
+  toggleMfa$ = () => <Observable<CustomHttpResponse<Profile>>>
+    this.http.patch<CustomHttpResponse<Profile>>
+      (`${this.server}/user/togglemfa`, {})
+      .pipe(
+        tap(console.log),
+        catchError(this.handleError)
+      );
+
+  updateImage$ = (formData: FormData) => <Observable<CustomHttpResponse<Profile>>>
+    this.http.patch<CustomHttpResponse<Profile>>
+      (`${this.server}/user/update/image`, formData)
+      .pipe(
+        tap(console.log),
+        catchError(this.handleError)
+      );
+
   private handleError(error: HttpErrorResponse): Observable<never> {
     console.log(error);
     let errorMessage: string;

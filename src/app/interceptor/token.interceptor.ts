@@ -46,12 +46,9 @@ export class TokenInterceptor implements HttpInterceptor {
         switchMap((response) => {
           console.log('Token Refresh Response:', response);
           this.isTokenRefreshing = false;
-          // @ts-ignore
           this.refreshTokenSubject.next(response);
-          // @ts-ignore
           console.log('New Token:', response.data.access_token);
           console.log('Sending original request:', request);
-          // @ts-ignore
           return next.handle(this.addAuthorizationTokenHeader(request, response.data.access_token))
         })
       );
