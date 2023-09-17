@@ -20,7 +20,7 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(private userService: UserService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> | Observable<HttpResponse<unknown>>{
-    if(request.url.includes('verify') || request.url.includes('login') || request.url.includes('register') 
+    if(request.url.includes('verify') || request.url.includes('login') || request.url.includes('register')
             || request.url.includes('refresh') || request.url.includes('resetpassword')) {
           return next.handle(request);
       }
@@ -36,6 +36,7 @@ export class TokenInterceptor implements HttpInterceptor {
       );
   }
 
+  // @ts-ignore
   private handleRefreshToken(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if(!this.isTokenRefreshing) {
       console.log('Refreshing Token...');

@@ -268,7 +268,7 @@
                                   <td>{{ event.createdAt | date: 'MMMM d, y, h:mm a' }}</td>
                                   <td>
                                     <span class="badge pill" [ngClass]="[
-                                    event.type === EventType.LOGIN_ATTEMPT_SUCCESS ? 'bg-success' : '',  
+                                    event.type === EventType.LOGIN_ATTEMPT_SUCCESS ? 'bg-success' : '',
                                     event.type === EventType.LOGIN_ATTEMPT ? 'bg-warning' : '',
                                     event.type === EventType.PROFILE_UPDATE ? 'bg-primary' : '',
                                     event.type === EventType.LOGIN_ATTEMPT_FAILURE ? 'bg-danger' : '',
@@ -296,9 +296,9 @@
        </section>
     </ng-container>
  </ng-container>
- 
+
  <!-- profile image change form -->
  <form enctype="multipart/form-data" style="display:none;">
-    <input type="file" #fileInput (change)="updatePicture($event.target.files[0]);getBase64($event.target.files[0])" name="image" id="image"
+    <input type="file" #fileInput (change)="updatePicture($event);getBase64($event)" name="image" id="image"
        placeholder="file" ngModel accept="image/*" />
  </form>

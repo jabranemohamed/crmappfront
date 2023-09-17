@@ -152,8 +152,10 @@ export class UserComponent implements OnInit {
       )
   }
 
-  updatePicture(image: File): void {
-    this.getBase64(image);
+  updatePicture(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const image: File = (target.files as FileList)[0];
+    this.getBase64(event);
     if (image) {
       this.isLoadingSubject.next(true);
       this.profileState$ = this.userService.updateImage$(this.getFormData(image))
@@ -161,8 +163,8 @@ export class UserComponent implements OnInit {
           map(response => {
             this.notification.onDefault(response.message);
             console.log(response);
-            this.dataSubject.next({ ...response, 
-              data: { ...response.data, 
+            this.dataSubject.next({ ...response,
+              data: { ...response.data,
                 user: { ...response.data.user, imageUrl: `${response.data.user.imageUrl}?time=${new Date().getTime()}`}} });
             this.isLoadingSubject.next(false);
             return { dataState: DataState.LOADED, appData: this.dataSubject.value };
@@ -187,7 +189,9 @@ export class UserComponent implements OnInit {
     return formData;
   }
 
-  getBase64(file: File):  string | ArrayBuffer {
+  getBase64(event: Event):  string | ArrayBuffer {
+    const target = event.target as HTMLInputElement;
+    const file: File = (target.files as FileList)[0];
     let fileInBase64: string | ArrayBuffer = null;
     const reader = new FileReader();
     reader.readAsDataURL(file);
