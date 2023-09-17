@@ -4,7 +4,7 @@ export interface Events {
     id: number;
     type: EventType;
     description: string;
-    device: string;
+    devide: string;
     ipAddress: string;
     createdAt: Date;
 }
