@@ -5,7 +5,7 @@
           <div class="card">
             <div class="card-body">
               <div class="text-center">
-                <h2><i style="margin-right: 5px;" class="bi bi-safe"></i>SecureCapita</h2>
+                <h2><i style="margin-right: 5px;" class="bi bi-safe"></i>CRM</h2>
                 <h5 class="card-title mt-4 mb-5">Create an Account</h5>
               </div>
               <div *ngIf="state.dataState === DataState.ERROR" class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-  
+
     <!-- Success screen -->
     <div *ngIf="state.registerSuccess" class="container">
       <div class="row justify-content-center my-5">
@@ -58,7 +58,7 @@
           <div class="card">
             <div class="card-body">
               <div class="text-center">
-                <h2><i style="margin-right: 5px;" class="bi bi-safe"></i>SecureCapita</h2>
+                <h2><i style="margin-right: 5px;" class="bi bi-safe"></i>CRM</h2>
                 <h5 class="card-title mt-4 mb-4">{{ state.message }}</h5>
                 <i class="bi bi-check-circle-fill" style="font-size: 80px;color: green;"></i>
                 <p class="mt-2" style="font-size: 20px;">Please access your email and confirm your account.</p>
