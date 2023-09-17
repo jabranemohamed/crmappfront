@@ -32,11 +32,11 @@
                           </tr>
                       </thead>
                       <tbody class="table-body">
-                          <tr *ngFor="let customer of state?.appData?.data?.page.content" class="cell-1">
+                          <tr *ngFor="let customer of state?.appData?.data?.page?.content" class="cell-1">
                             <th class="text-center">{{ customer.id }}</th>
                             <td><img [src]="customer.imageUrl" width="42" height="42" class="rounded-circle" [alt]="customer.name"></td>
                             <td>{{ customer.name }}</td>
-                            <td>{{ customer.email }}</td>                          
+                            <td>{{ customer.email }}</td>
                             <td>{{ customer.phone }}</td>
                             <td>
                                <span class="badge"
@@ -44,7 +44,7 @@
                                     customer.status === 'ACTIVE' ? ' bg-success' : '',
                                     customer.status === 'PENDING' ? ' bg-primary' : '',
                                     customer.status === 'BANNED' ? ' bg-danger' : '',
-                                    customer.status === 'INACTIVE' ? ' bg-info' : '',]" 
+                                    customer.status === 'INACTIVE' ? ' bg-info' : '',]"
                                >
                                   {{ customer.status }}
                                </span>
@@ -57,8 +57,8 @@
                          </tr>
                       </tbody>
                   </table>
-                  
-                   <nav *ngIf="state?.appData?.data?.page.content.length > 0" aria-label="Page navigation example">
+
+                   <nav *ngIf="state?.appData?.data?.page?.content?.length > 0" aria-label="Page navigation example">
                       <ul class="pagination justify-content-end">
                          <li [ngClass]="0 == (currentPage$ | async) ? ' disabled' : ''" class="page-item pointer">
                             <a (click)="goToNextOrPreviousPage('backward')" class="page-link">&laquo; Prev</a>

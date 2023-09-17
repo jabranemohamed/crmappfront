@@ -38,18 +38,18 @@
                             <div class="invoice-to">
                                <small>to</small>
                                <address class="m-t-5 m-b-5">
-                                  <strong class="text-inverse">{{ state?.appData?.data?.customer.name }}</strong><br>
-                                  Address: {{ state?.appData?.data?.customer.address }} <br>
-                                  Email: {{ state?.appData?.data?.customer.email }} <br>
-                                  Phone: {{ state?.appData?.data?.customer.phone }} <br>
+                                  <strong class="text-inverse">{{ state?.appData?.data?.customer?.name }}</strong><br>
+                                  Address: {{ state?.appData?.data?.customer?.address }} <br>
+                                  Email: {{ state?.appData?.data?.customer?.email }} <br>
+                                  Phone: {{ state?.appData?.data?.customer?.phone }} <br>
                                   Status: <span class="badge bg-success">
-                                    {{ state?.appData?.data?.invoice.status }}
-                               </span> 
+                                    {{ state?.appData?.data?.invoice?.status }}
+                               </span>
                                </address>
                             </div>
                             <div class="invoice-date">
-                               <small>Invoice Number: #{{ state?.appData?.data?.invoice.invoiceNumber }}</small>
-                               <div class="date text-inverse m-t-5">Invoice Date: {{ state?.appData?.data?.invoice.date | date: 'mediumDate' }}</div>
+                               <small>Invoice Number: #{{ state?.appData?.data?.invoice?.invoiceNumber }}</small>
+                               <div class="date text-inverse m-t-5">Invoice Date: {{ state?.appData?.data?.invoice?.date | date: 'mediumDate' }}</div>
                                <div class="invoice-detail">Due Date: 30 Days from Invoice Date</div>
                             </div>
                          </div>

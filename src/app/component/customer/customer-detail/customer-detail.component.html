@@ -152,7 +152,7 @@
                                      {{ invoice.status }}
                                   </span>
                                </td>
-                               <td>{{ invoice.date | date: 'mediumDate' }}</td>
+                               <td>{{ invoice.createdAt | date: 'mediumDate' }}</td>
                                <td>${{ invoice.total }}</td>
                                <td>
                                   <button type="button" [routerLink]="['/invoices', invoice.id, invoice.invoiceNumber]" class="btn btn-info btn-sm">Print</button>

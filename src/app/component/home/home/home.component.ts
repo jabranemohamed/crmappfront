@@ -19,7 +19,7 @@ import { NotificationService } from 'src/app/service/notification.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  homeState$: Observable<State<CustomHttpResponse<Page<Customer> & User & Stats>>>;
+  homeState$: Observable<State<CustomHttpResponse<any>>>;
   private dataSubject = new BehaviorSubject<CustomHttpResponse<Page<Customer> & User & Stats>>(null);
   private isLoadingSubject = new BehaviorSubject<boolean>(false);
   isLoading$ = this.isLoadingSubject.asObservable();

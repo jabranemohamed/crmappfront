@@ -78,12 +78,12 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <button [disabled]="state.dataState === DataState.LOADING || newCustomerForm.invalid || newCustomerForm.pristine|| (isLaoding$ | async)"
+                                        <button [disabled]="state.dataState === DataState.LOADING || newCustomerForm.invalid || newCustomerForm.pristine|| (isLoading$ | async)"
                                          type="submit" class="btn btn-primary mt-5">
-                                            <span *ngIf="isLaoding$ | async" class="spinner-border spinner-border-sm"
+                                            <span *ngIf="isLoading$ | async" class="spinner-border spinner-border-sm"
                                                 role="status" aria-hidden="true" style="margin-right: 5px;"></span>
-                                            <span *ngIf="isLaoding$ | async">Saving...</span>
-                                            <span *ngIf="!(isLaoding$ | async)">Save Customer</span>
+                                            <span *ngIf="isLoading$ | async">Saving...</span>
+                                            <span *ngIf="!(isLoading$ | async)">Save Customer</span>
                                         </button>
                                     </div>
                                 </form>

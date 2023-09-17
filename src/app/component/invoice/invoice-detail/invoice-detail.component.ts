@@ -19,7 +19,7 @@ const INVOICE_ID = 'id';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InvoiceDetailComponent implements OnInit {
-  invoiceState$: Observable<State<CustomHttpResponse<Customer & Invoice & User>>>;
+  invoiceState$: Observable<State<any>>;
   private dataSubject = new BehaviorSubject<CustomHttpResponse<Customer & Invoice & User>>(null);
   private isLoadingSubject = new BehaviorSubject<boolean>(false);
   isLoading$ = this.isLoadingSubject.asObservable();
