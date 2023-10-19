@@ -4,7 +4,7 @@ services:
     build: .
     image: crmapp:v1
     ports:
-      - 80:80
+      - 8098:80
     expose:
       - 80
     networks:
